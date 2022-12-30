@@ -26,7 +26,7 @@ app.get('/login', async (req, res) => {
     res.status(200).json(result)
 })
 
-app.post('/register', async (req, res) => {
+app.post('/register', express.json(), async (req, res) => {
     // let result = await _db.collection('students')
     //     .insertOne()
     console.log(req.body)
