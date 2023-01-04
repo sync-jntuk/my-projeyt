@@ -1,6 +1,7 @@
 import cors from "cors"
 import connection from "./models/dbConnection.js"
 import express from "express"
+import students from "./routes/student.js"
 
 let _db = null
 const app = express()
@@ -41,5 +42,6 @@ app.get('/', async (req, res) => {
     res.json({ message: result })
 })
 
+app.use('/students', students)
 app.use(express.json())
 app.use(cors())
